@@ -37,7 +37,7 @@ SELEKTOR vezme jednotlivé čislice a postupne ich cyklicky posiela do bloku BIN
 
 BIN2SEG je blok ktorý už bol vytvorený a použil som ho zo školského GitHub-u. V zásade prepisuje 4 bitové binárne čislo na kód pre 7 segmentovku. 
 
-V nasledujúcom videu je podrobne ukázaná funkčnosť na doske NEXYS4 DDR.
-![IMG_9978](https://github.com/user-attachments/assets/5d81068c-82d2-4e10-bcab-60da2e655deb)
+V nasledujúcom videu je podrobne ukázaná funkčnosť na doske NEXYS4 DDR. 
+ODkaz na video na YOUTUBE kvôli veľkosti   https://youtu.be/Kf4AAvAl3_s
 
 
