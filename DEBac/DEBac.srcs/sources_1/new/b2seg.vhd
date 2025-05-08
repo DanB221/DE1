@@ -3,9 +3,9 @@ use ieee.std_logic_1164.all;
 
 entity bin2seg is
     port (
-        clear : in    std_logic;                    -- Ak '1', vypne všetky segmenty
-        bin   : in    std_logic_vector(3 downto 0); -- 4-bitové číslo 0–15 (hex)
-        seg   : out   std_logic_vector(6 downto 0)  -- Výstup pre segmenty A až G (active low)
+        clear : in    std_logic;                    
+        bin   : in    std_logic_vector(3 downto 0); 
+        seg   : out   std_logic_vector(6 downto 0) 
     );
 end entity bin2seg;
 
@@ -15,7 +15,7 @@ begin
     process (bin, clear)
     begin
         if (clear = '1') then
-            seg <= "1111111";  -- Vypnuté všetky segmenty (všetky high pre common anode)
+            seg <= "1111111";  
         else
             case bin is
                 when "0000" => seg <= "0000001"; -- 0
@@ -34,7 +34,7 @@ begin
                 when "1101" => seg <= "1000010"; -- d
                 when "1110" => seg <= "0110000"; -- E
                 when "1111" => seg <= "0111000"; -- F
-                when others => seg <= "1111111"; -- výchozí stav = vypnuté
+                when others => seg <= "1111111"; 
             end case;
         end if;
     end process;
