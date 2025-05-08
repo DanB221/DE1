@@ -40,4 +40,10 @@ BIN2SEG je blok ktorý už bol vytvorený a použil som ho zo školského GitHub
 V nasledujúcom videu je podrobne ukázaná funkčnosť na doske NEXYS4 DDR. 
 ODkaz na video na YOUTUBE kvôli veľkosti   https://youtu.be/Kf4AAvAl3_s
 
+Problémy
+Vyskytli sa 1. problém s obráteným poradím čísel, ktorý sa podarilo jednoducho vyriešiť prehodením spojení v toplayer-i medzi blokmi DELIC a SELEKTOR.
+            2. problém s veľmi výchlym prepínamím medzi číslami pri stlačení tlačidiel. Tento problém sa vyriešil pomocou blokov DEB - debouncer.
+
+Vytvorenie projektu trvalo približne 16 hodín čistého času. Projek som vypracoval podľa mojej najlepšej vôle a myslím si, že výsledok o tom svedčí.
+
 
