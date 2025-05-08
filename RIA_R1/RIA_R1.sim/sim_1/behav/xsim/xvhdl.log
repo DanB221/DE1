@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/martin/Documents/XilinxProjects/RIA_R1/RIA_R1.srcs/sources_1/new/RIA_R1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'RIA_R1'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/martin/Documents/XilinxProjects/RIA_R1/RIA_R1.srcs/sim_1/new/RIA_R1_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'RIA_R1_tb'
