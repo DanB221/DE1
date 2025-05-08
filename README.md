@@ -2,7 +2,7 @@
 Projekt z predmetu DE1
 Zadanie úlohy bolo vytvoriť hodiny/stopky a časovač. 
 Všetky časti fungujú nezáväzne na sebe,to znamená, že hodiny, stopky a časovač stále bežia aj keď aktuálne máme navolenú inú jednotku na zobrazovanie. Prepínanie medzi jednotlivými jednotkami funguje na základe dvoch prepívačov a to SW15 a SW14. 
-SW15  SW14
+SW15  SW14\n
 0      0   -> hodiny
 0      1   -> stopky
 1      0   -> časovač(alarm)
