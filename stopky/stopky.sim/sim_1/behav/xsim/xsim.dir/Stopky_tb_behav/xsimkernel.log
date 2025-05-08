@@ -1,0 +1,7 @@
+Running: xsim.dir/Stopky_tb_behav/xsimk -simmode gui -wdb Stopky_tb_behav.wdb -simrunnum 0 -socket 43919
+Design successfully loaded
+Design Loading Memory Usage: 400004 KB (Peak: 400056 KB)
+Design Loading CPU Usage: 1190 ms
+Simulation completed
+Simulation Memory Usage: 489940 KB (Peak: 539272 KB)
+Simulation CPU Usage: 1190 ms

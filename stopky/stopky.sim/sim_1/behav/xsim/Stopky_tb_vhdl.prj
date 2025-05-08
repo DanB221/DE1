@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../stopky.srcs/sources_1/new/stopky.vhd" \
+"../../../../stopky.srcs/sim_1/new/stopky_tb.vhd" \
+
+# Do not sort compile order
+nosort
