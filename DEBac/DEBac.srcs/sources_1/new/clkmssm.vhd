@@ -14,8 +14,8 @@ end TickGenerator;
 
 architecture Behavioral of TickGenerator is
 
-    constant CYCLES_PER_MS  : natural := 100_000;       -- 1 ms 
-    constant CYCLES_PER_SEC : natural := 100_000_000;   -- 1 s 
+    constant CYCLES_PER_MS  : natural := 100_000;       
+    constant CYCLES_PER_SEC : natural := 100_000_000;   
 
     signal counter_ms  : unsigned(16 downto 0) := (others => '0');
     signal counter_s   : unsigned(26 downto 0) := (others => '0');
@@ -36,7 +36,7 @@ begin
             tick_min_i  <= '0';
 
         elsif rising_edge(clk) then
-            -- Tick každú milisekundu
+       
             if counter_ms = CYCLES_PER_MS - 1 then
                 counter_ms <= (others => '0');
                 tick_ms_i  <= '1';
@@ -45,12 +45,12 @@ begin
                 tick_ms_i  <= '0';
             end if;
 
-            -- Tick každú sekundu
+            
             if counter_s = CYCLES_PER_SEC - 1 then
                 counter_s <= (others => '0');
                 tick_s_i  <= '1';
 
-                -- Počítadlo sekúnd pre minútový tick
+             
                 if counter_sec = 59 then
                     counter_sec <= (others => '0');
                     tick_min_i  <= '1';
