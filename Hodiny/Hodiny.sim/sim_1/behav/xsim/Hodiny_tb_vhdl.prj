@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Hodiny.srcs/sources_1/new/Hodiny.vhd" \
+"../../../../Hodiny.srcs/sim_1/new/Hodiny_tb.vhd" \
+
+# Do not sort compile order
+nosort
