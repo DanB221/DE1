@@ -4,8 +4,8 @@ use ieee.numeric_std.all;
 
 entity top_level is
     port (
-        -- Clock a Reset
-        CLK100MHZ   : in  std_logic;-- Vstupy pre RIA-R1
+     
+        CLK100MHZ   : in  std_logic;
         SW1         : in  std_logic;
         SW2         : in  std_logic;
         SW14        : in  std_logic;
@@ -32,30 +32,30 @@ end entity top_level;
 architecture Behavioral of top_level is
 
     
-    signal hodSW1 : std_logic;
-    signal hodSW2 : std_logic;
+    signal hodSW1   : std_logic;
+    signal hodSW2   : std_logic;
     signal hodBTN_U : std_logic;
     signal hodBTN_D : std_logic;
 
     signal stopBTN_C : std_logic;
     signal stopBTN_D : std_logic;
 
-    signal alarmSW1 : std_logic;
-    signal alarmSW2 : std_logic;
+    signal alarmSW1   : std_logic;
+    signal alarmSW2   : std_logic;
     signal alarmBTN_U : std_logic;
     signal alarmBTN_C : std_logic;
     signal alarmBTN_D : std_logic;
 
-    signal alarm_minuty  : std_logic_vector(5 downto 0);
-    signal alarm_sekundy : std_logic_vector(5 downto 0);
-    signal hodiny_minuty : std_logic_vector(5 downto 0);
-    signal hodiny_hodiny : std_logic_vector(4 downto 0);
-    signal stopky_minuty : std_logic_vector(5 downto 0);
-    signal stopky_sekundy : std_logic_vector(5 downto 0);
+    signal alarm_minuty       : std_logic_vector(5 downto 0);
+    signal alarm_sekundy      : std_logic_vector(5 downto 0);
+    signal hodiny_minuty      : std_logic_vector(5 downto 0);
+    signal hodiny_hodiny      : std_logic_vector(4 downto 0);
+    signal stopky_minuty      : std_logic_vector(5 downto 0);
+    signal stopky_sekundy     : std_logic_vector(5 downto 0);
     signal stopky_milisekundy : std_logic_vector(7 downto 0);
 
-    signal tick_ms : std_logic;
-    signal tick_s : std_logic;
+    signal tick_ms  : std_logic;
+    signal tick_s   : std_logic;
     signal tick_min : std_logic;
 
     signal A : std_logic_vector(7 downto 0);
@@ -76,10 +76,10 @@ architecture Behavioral of top_level is
     signal BTN_C_deb : std_logic;
 
     component debouncer is
-        Port ( inp : in STD_LOGIC;
-               clk : in STD_LOGIC;
+        Port ( inp  : in STD_LOGIC;
+               clk  : in STD_LOGIC;
                outp : out STD_LOGIC;
-               rst : in STD_LOGIC
+               rst  : in STD_LOGIC
                );
     end component;
 
@@ -146,7 +146,7 @@ architecture Behavioral of top_level is
 
     component delic is
         port (
-            clk        : in  std_logic;  -- nový vstup: hodinový signál
+            clk        : in  std_logic;  
             A          : in  std_logic_vector(7 downto 0);
             B          : in  std_logic_vector(7 downto 0);
             C          : in  std_logic_vector(7 downto 0);
@@ -163,7 +163,7 @@ architecture Behavioral of top_level is
         port (
             clk             : in  std_logic;
             reset           : in  std_logic;
-            tick_ms         : in  std_logic;  -- impulz pre prechod na ďalší digit
+            tick_ms         : in  std_logic;  
             digit0		    : in  std_logic_vector(3 downto 0);
             digit1		    : in  std_logic_vector(3 downto 0);
             digit2	    	: in  std_logic_vector(3 downto 0);
@@ -171,21 +171,21 @@ architecture Behavioral of top_level is
             digit4	    	: in  std_logic_vector(3 downto 0);
             digit5		    : in  std_logic_vector(3 downto 0);
             selected_digit 	: out std_logic_vector(3 downto 0);
-            an_select      	: out std_logic_vector(7 downto 0) -- aktívne LOW pre 6 digitov
+            an_select      	: out std_logic_vector(7 downto 0) 
         );
     end component;
 
     component alarm is
         port (
-            clk            : in  std_logic; -- hodinový signál
-            alarm_SW1     : in  std_logic;  -- Nastavovanie sekúnd (SW1) alebo minút (SW2)
-            alarm_SW2     : in  std_logic;  -- Nastavovanie minút alebo sekúnd
-            alarm_BTN_U   : in  std_logic;  -- Zvyšovanie hodnoty
-            alarm_BTN_D   : in  std_logic;  -- Znižovanie hodnoty
-            alarm_BTN_C   : in  std_logic;  -- Spustenie/Pozastavenie alarmu
-            tick_s        : in  std_logic;  -- Tick každú sekundu
-            alarm_minuty  : out std_logic_vector(5 downto 0);  -- Minúty
-            alarm_sekundy : out std_logic_vector(5 downto 0)   -- Sekundy
+            clk           : in  std_logic; 
+            alarm_SW1     : in  std_logic;  
+            alarm_SW2     : in  std_logic;  
+            alarm_BTN_U   : in  std_logic; 
+            alarm_BTN_D   : in  std_logic;  
+            alarm_BTN_C   : in  std_logic;  
+            tick_s        : in  std_logic;  
+            alarm_minuty  : out std_logic_vector(5 downto 0); 
+            alarm_sekundy : out std_logic_vector(5 downto 0)  
         );
     end component;
 
@@ -198,8 +198,8 @@ architecture Behavioral of top_level is
             BTN_U     : in  STD_LOGIC;
             tick_s    : in  STD_LOGIC;
             BTN_D     : in  STD_LOGIC;
-            minuty    : out STD_LOGIC_VECTOR(5 downto 0); -- 0 to 59
-            hodiny    : out STD_LOGIC_VECTOR(4 downto 0)  -- 0 to 23
+            minuty    : out STD_LOGIC_VECTOR(5 downto 0); 
+            hodiny    : out STD_LOGIC_VECTOR(4 downto 0) 
         );
     end component;
 
@@ -207,12 +207,12 @@ architecture Behavioral of top_level is
         Port (
             clk      : in  STD_LOGIC;
             reset    : in  STD_LOGIC;
-            BTN_C    : in  STD_LOGIC;   -- start/stop toggle
-            BTN_D    : in  STD_LOGIC;   -- reset
-            tick_ms  : in  STD_LOGIC;   -- každá 1 ms
-            ms_out   : out STD_LOGIC_VECTOR(7 downto 0); -- 0 - 99
-            s_out    : out STD_LOGIC_VECTOR(5 downto 0); -- 0 - 59
-            min_out  : out STD_LOGIC_VECTOR(5 downto 0)  -- 0 - 59
+            BTN_C    : in  STD_LOGIC; 
+            BTN_D    : in  STD_LOGIC;   
+            tick_ms  : in  STD_LOGIC;   
+            ms_out   : out STD_LOGIC_VECTOR(7 downto 0);
+            s_out    : out STD_LOGIC_VECTOR(5 downto 0); 
+            min_out  : out STD_LOGIC_VECTOR(5 downto 0)  
         );
     end component;
 
@@ -220,13 +220,13 @@ architecture Behavioral of top_level is
 
     RIA1 : component RIA_R1
         port map (
-            SW1         => SW1,
-            SW2         => SW2,
-            SW14        => SW14,
-            SW15        => SW15,
-            BTN_U       => BTN_U_deb,
-            BTN_D       => BTN_D_deb,
-            BTN_C       => BTN_C_deb,
+            SW1          => SW1,
+            SW2          => SW2,
+            SW14         => SW14,
+            SW15         => SW15,
+            BTN_U        => BTN_U_deb,
+            BTN_D        => BTN_D_deb,
+            BTN_C        => BTN_C_deb,
             hod_SW1      => hodSW1,
             hod_SW2      => hodSW2,
             hod_BTN_U    => hodBTN_U,
@@ -276,8 +276,7 @@ architecture Behavioral of top_level is
 
     ALARMx : component alarm
         port map (
-            clk       => CLK100MHZ,
-
+            clk           => CLK100MHZ,
             alarm_SW1     => alarmSW1,
             alarm_SW2     => alarmSW2,
             alarm_BTN_U   => alarmBTN_U,
