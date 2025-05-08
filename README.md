@@ -25,4 +25,4 @@ Takto vyzeral môj ručný návrh daného zadania
 Takto už vyzerá schéma v programe Vivado
 ![image](https://github.com/user-attachments/assets/e76f9849-428b-4b01-b6a0-0cc551c070e3)
 
-V schéme sú viditeľné všetky bloky, ktorých kódy sú prístupné v dokumentoch vyššie. Hlavné bloky sú RIA-R1, RIA-R2, 
+V schéme sú viditeľné všetky bloky, ktorých kódy sú prístupné v dokumentoch vyššie. Hlavné bloky sú RIA-R1, RIA-R2, HOD, ALARM, STOPKY, SELEKTOR, DELIC, DEB1 až DEB3,, BIN2SEG 
