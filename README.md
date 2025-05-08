@@ -21,8 +21,23 @@ Nastavíme ho obdobne ako hodiny, no so zapnutým SW2 nastavujeme minúty a so z
 Všetky nastavovania čísel sú ochránené pred pretečením v medziach svojej jednotky. 
 
 Takto vyzeral môj ručný návrh daného zadania
-
+![IMG_9978](https://github.com/user-attachments/assets/287c8105-c0ac-49e3-98e3-ec505015d783)
 Takto už vyzerá schéma v programe Vivado
 ![image](https://github.com/user-attachments/assets/e76f9849-428b-4b01-b6a0-0cc551c070e3)
 
-V schéme sú viditeľné všetky bloky, ktorých kódy sú prístupné v dokumentoch vyššie. Hlavné bloky sú RIA-R1, RIA-R2, HOD, ALARM, STOPKY, SELEKTOR, DELIC, DEB1 až DEB3,, BIN2SEG 
+V schéme sú viditeľné všetky bloky, ktorých kódy sú prístupné v dokumentoch vyššie. Hlavné bloky sú RIA-R1, RIA-R2, HOD, ALARM, STOPKY, SELEKTOR, DELIC, DEB1 až DEB3, CLK, BIN2SEG.
+
+Bloky RIA zabezpečujú riadenie vstupov a výstupov, to znamená, že bloky dokážu pracovať nezávisle na aktuálne zobrazovanom bloku a taktiež sa nemôže stať, že pomocou tlačidiel navolíme niečo, čo nevidno.
+
+Bloky ALARM, STOPKY a HODINY sú bloky v ktorých prebieha prepočet na základe vstupného časového signálu z bloku CLK, pre HOD je vstup minútový tik, pre STOPKY je to milisekundový tik a pre ALARM je to sekundový tik. Výstupy sa spracuvávajú v RIA-R2, ktorá to následne posiela do bloku DELIC.
+
+DELIC pracuje so vstupnými čislami ktoré majú dve čislice a rozdelí ich na číslicu symbolyzujúcu desiatky a číslicu sybolyzujúcu jednotky. 
+
+SELEKTOR vezme jednotlivé čislice a postupne ich cyklicky posiela do bloku BIN2SEG. Zároveň cyklicky zapína potrebné anódy 7 segmentovky.
+
+BIN2SEG je blok ktorý už bol vytvorený a použil som ho zo školského GitHub-u. V zásade prepisuje 4 bitové binárne čislo na kód pre 7 segmentovku. 
+
+V nasledujúcom videu je podrobne ukázaná funkčnosť na doske NEXYS4 DDR.
+![IMG_9978](https://github.com/user-attachments/assets/5d81068c-82d2-4e10-bcab-60da2e655deb)
+
+
